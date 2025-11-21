@@ -12,17 +12,23 @@ import threading
 import time
 from pathlib import Path
 from datetime import datetime
-import pyperclip
 import whisper
 import yt_dlp
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from tqdm import tqdm
 
-# Configuration
-WATCH_DIR = os.path.expanduser("~/Downloads/whisper_drop")
-OUTPUT_DIR = os.path.expanduser("~/whisper_transcripts")
-MODEL_NAME = "base"  # Options: tiny, base, small, medium, large
+# Try to import pyperclip, but make it optional for Docker environments
+try:
+    import pyperclip
+    PYPERCLIP_AVAILABLE = True
+except ImportError:
+    PYPERCLIP_AVAILABLE = False
+
+# Configuration - supports environment variable overrides for Docker
+WATCH_DIR = os.getenv("WATCH_DIR", os.path.expanduser("~/Downloads/whisper_drop"))
+OUTPUT_DIR = os.getenv("OUTPUT_DIR", os.path.expanduser("~/whisper_transcripts"))
+MODEL_NAME = os.getenv("WHISPER_MODEL", "base")  # Options: tiny, base, small, medium, large
 SUPPORTED_VIDEO_FORMATS = {".mp4", ".avi", ".mov", ".mkv", ".flv", ".wmv", ".m4a", ".mp3", ".wav"}
 
 
@@ -202,6 +208,10 @@ class ClipboardMonitor:
 
     def _monitor_loop(self):
         """Monitor clipboard for changes"""
+        if not PYPERCLIP_AVAILABLE:
+            print("⚠️  Pyperclip not available - clipboard monitoring disabled")
+            return
+
         while True:
             try:
                 current_clipboard = pyperclip.paste()

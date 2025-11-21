@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  whisper-transcriber:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: whisper-transcriber
+    volumes:
+      # Mount directories for video input and transcript output
+      - ./data/watch:/data/watch
+      - ./data/transcripts:/data/transcripts
+      # Optional: mount a local directory for convenience
+      - ${WATCH_DIR:-./data/watch}:/data/watch
+      - ${OUTPUT_DIR:-./data/transcripts}:/data/transcripts
+    environment:
+      # Whisper model: tiny, base, small, medium, large
+      WHISPER_MODEL: ${WHISPER_MODEL:-base}
+      WATCH_DIR: /data/watch
+      OUTPUT_DIR: /data/transcripts
+      PYTHONUNBUFFERED: 1
+    restart: unless-stopped
+    # Uncomment for GPU support (requires nvidia-docker)
+    # runtime: nvidia
+    # environment:
+    #   NVIDIA_VISIBLE_DEVICES: all
+    stdin_open: true
+    tty: true

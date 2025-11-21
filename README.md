@@ -1,6 +1,6 @@
-# Whisper Transcriber
+# Whisper Transcriber v2
 
-A powerful drag-and-drop video transcription tool powered by OpenAI's Whisper. Transcribe videos, YouTube links, and audio files to text with ease.
+A powerful drag-and-drop video transcription tool powered by OpenAI's Whisper. Transcribe videos, YouTube links, and audio files to text with ease. **Now with Docker support for easy sharing and deployment!**
 
 ## Features
 
@@ -12,6 +12,30 @@ A powerful drag-and-drop video transcription tool powered by OpenAI's Whisper. T
   - WebVTT with timestamps (.vtt)
 - **Clipboard Monitoring**: Automatically detects YouTube URLs in your clipboard
 - **Support for Multiple Formats**: MP4, AVI, MOV, MKV, FLV, WMV, M4A, MP3, WAV
+- **Docker Support**: Run anywhere with one command
+- **GPU Acceleration**: Optional NVIDIA GPU support for faster transcription
+
+## Quick Start (Docker - Recommended)
+
+```bash
+# Clone repo and navigate to it
+git clone https://github.com/yourusername/whisper-transcriber.git
+cd whisper-transcriber
+
+# Create data directories
+mkdir -p data/watch data/transcripts
+
+# Start the service
+docker-compose up -d
+
+# Drop videos into data/watch/ folder
+cp /path/to/video.mp4 ./data/watch/
+
+# Check results in data/transcripts/
+ls ./data/transcripts/
+```
+
+For more Docker details, see [DOCKER.md](DOCKER.md).
 
 ## Installation
 

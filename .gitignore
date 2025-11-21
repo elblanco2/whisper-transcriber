@@ -38,6 +38,11 @@ ENV/
 .temp/
 *.temp
 temp_downloads/
+data/
+!data/.gitkeep
 
 # Keep directories but ignore their contents (for watch folder)
 !.gitkeep
+
+# Docker volumes and cache
+docker-compose.override.yml
