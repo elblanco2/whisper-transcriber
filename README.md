@@ -19,7 +19,7 @@ A powerful drag-and-drop video transcription tool powered by OpenAI's Whisper. T
 
 ```bash
 # Clone repo and navigate to it
-git clone https://github.com/yourusername/whisper-transcriber.git
+git clone https://github.com/elblanco2/whisper-transcriber.git
 cd whisper-transcriber
 
 # Create data directories

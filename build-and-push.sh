@@ -7,8 +7,8 @@
 set -e
 
 # Configuration
-GITHUB_USERNAME="${GITHUB_USERNAME:?Please set GITHUB_USERNAME env var}"
-DOCKER_USERNAME="${DOCKER_USERNAME:?Please set DOCKER_USERNAME env var}"
+GITHUB_USERNAME="${GITHUB_USERNAME:-elblanco2}"
+DOCKER_USERNAME="${DOCKER_USERNAME:-elblanco2}"
 IMAGE_NAME="whisper-transcriber"
 VERSION="${1:-latest}"
 

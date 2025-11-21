@@ -16,7 +16,7 @@ This guide walks through publishing your Whisper Transcriber to GitHub and makin
 
 ```bash
 # After creating repo on GitHub, in your local directory:
-git remote add origin https://github.com/yourusername/whisper-transcriber.git
+git remote add origin https://github.com/elblanco2/whisper-transcriber.git
 git branch -M main
 git push -u origin main
 ```
@@ -66,7 +66,7 @@ The `.github/workflows/docker-build.yml` will automatically:
 After your first push, check:
 1. Go to "Actions" tab on GitHub
 2. You should see a "Build and Push Docker Image" workflow running
-3. Once complete, image available at: `ghcr.io/yourusername/whisper-transcriber:latest`
+3. Once complete, image available at: `ghcr.io/elblanco2/whisper-transcriber:latest`
 
 ## Step 5: Share with Friends
 
@@ -76,10 +76,10 @@ Your friends can now run:
 
 ```bash
 # Pull the image
-docker pull ghcr.io/yourusername/whisper-transcriber:latest
+docker pull ghcr.io/elblanco2/whisper-transcriber:latest
 
 # Or just clone and use docker-compose
-git clone https://github.com/yourusername/whisper-transcriber.git
+git clone https://github.com/elblanco2/whisper-transcriber.git
 cd whisper-transcriber
 docker-compose up -d
 ```
@@ -88,11 +88,11 @@ docker-compose up -d
 
 Send friends your GitHub link:
 ```
-https://github.com/yourusername/whisper-transcriber
+https://github.com/elblanco2/whisper-transcriber
 ```
 
 They can:
-1. Clone it: `git clone https://github.com/yourusername/whisper-transcriber.git`
+1. Clone it: `git clone https://github.com/elblanco2/whisper-transcriber.git`
 2. Run it: `docker-compose up -d`
 
 ### Option 3: Docker Hub (Optional)
@@ -104,15 +104,15 @@ Push to Docker Hub for even wider distribution:
 docker login
 
 # Tag image
-docker tag ghcr.io/yourusername/whisper-transcriber:latest yourusername/whisper-transcriber:latest
+docker tag ghcr.io/elblanco2/whisper-transcriber:latest elblanco2/whisper-transcriber:latest
 
 # Push
-docker push yourusername/whisper-transcriber:latest
+docker push elblanco2/whisper-transcriber:latest
 ```
 
 Friends can then use:
 ```bash
-docker pull yourusername/whisper-transcriber:latest
+docker pull elblanco2/whisper-transcriber:latest
 ```
 
 ## Full Example: Your Friends' Setup
@@ -121,14 +121,14 @@ docker pull yourusername/whisper-transcriber:latest
 
 You send them:
 ```
-https://github.com/yourusername/whisper-transcriber
+https://github.com/elblanco2/whisper-transcriber
 ```
 
 ### Your Friend Sets Up (30 seconds)
 
 ```bash
 # Clone
-git clone https://github.com/yourusername/whisper-transcriber.git
+git clone https://github.com/elblanco2/whisper-transcriber.git
 cd whisper-transcriber
 
 # Create data folders
@@ -204,10 +204,10 @@ git push
 Add these to your README for street cred:
 
 ```markdown
-[![Docker Build](https://github.com/yourusername/whisper-transcriber/actions/workflows/docker-build.yml/badge.svg)](https://github.com/yourusername/whisper-transcriber/actions/workflows/docker-build.yml)
-[![Latest Release](https://img.shields.io/github/v/release/yourusername/whisper-transcriber)](https://github.com/yourusername/whisper-transcriber/releases)
+[![Docker Build](https://github.com/elblanco2/whisper-transcriber/actions/workflows/docker-build.yml/badge.svg)](https://github.com/elblanco2/whisper-transcriber/actions/workflows/docker-build.yml)
+[![Latest Release](https://img.shields.io/github/v/release/elblanco2/whisper-transcriber)](https://github.com/elblanco2/whisper-transcriber/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Container Registry](https://img.shields.io/badge/Container-GHCR-blue)](https://github.com/users/yourusername/packages/container/whisper-transcriber)
+[![Container Registry](https://img.shields.io/badge/Container-GHCR-blue)](https://github.com/users/elblanco2/packages/container/whisper-transcriber)
 ```
 
 ## Troubleshooting
@@ -223,7 +223,7 @@ Add these to your README for street cred:
 
 ```bash
 # Check image exists
-docker pull ghcr.io/yourusername/whisper-transcriber:latest
+docker pull ghcr.io/elblanco2/whisper-transcriber:latest
 
 # If private, need GitHub token:
 echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin

@@ -6,7 +6,7 @@ Your friend just sent you this. Here's how to get it running in **30 seconds**:
 
 ```bash
 # 1. Clone
-git clone https://github.com/yourusername/whisper-transcriber.git
+git clone https://github.com/elblanco2/whisper-transcriber.git
 cd whisper-transcriber
 
 # 2. Create folders

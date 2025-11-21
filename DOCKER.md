@@ -13,7 +13,7 @@ Running Whisper Transcriber in Docker makes it easy to deploy, share, and run on
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/whisper-transcriber.git
+git clone https://github.com/elblanco2/whisper-transcriber.git
 cd whisper-transcriber
 ```
 
@@ -111,10 +111,10 @@ Instead of building locally, you can pull the pre-built image:
 
 ```bash
 # From GitHub Container Registry (recommended)
-docker pull ghcr.io/yourusername/whisper-transcriber:latest
+docker pull ghcr.io/elblanco2/whisper-transcriber:latest
 
 # Or from Docker Hub
-docker pull yourusername/whisper-transcriber:latest
+docker pull elblanco2/whisper-transcriber:latest
 ```
 
 Then run it:
@@ -123,7 +123,7 @@ Then run it:
 docker run -it \
   -v $(pwd)/data/watch:/data/watch \
   -v $(pwd)/data/transcripts:/data/transcripts \
-  ghcr.io/yourusername/whisper-transcriber:latest
+  ghcr.io/elblanco2/whisper-transcriber:latest
 ```
 
 ## Building Your Own Image
@@ -138,12 +138,12 @@ Tag it for Docker Hub or GitHub Container Registry:
 
 ```bash
 # GitHub Container Registry
-docker tag whisper-transcriber:latest ghcr.io/yourusername/whisper-transcriber:latest
-docker push ghcr.io/yourusername/whisper-transcriber:latest
+docker tag whisper-transcriber:latest ghcr.io/elblanco2/whisper-transcriber:latest
+docker push ghcr.io/elblanco2/whisper-transcriber:latest
 
 # Docker Hub
-docker tag whisper-transcriber:latest yourusername/whisper-transcriber:latest
-docker push yourusername/whisper-transcriber:latest
+docker tag whisper-transcriber:latest elblanco2/whisper-transcriber:latest
+docker push elblanco2/whisper-transcriber:latest
 ```
 
 ## GPU Support (NVIDIA)
@@ -286,12 +286,12 @@ PYTHONUNBUFFERED  - Set to 1 to see logs in real-time
 1. Push to GitHub
 2. GitHub Actions automatically builds Docker image
 3. Share the GitHub repo link
-4. Friends can use: `docker pull ghcr.io/yourusername/whisper-transcriber:latest`
+4. Friends can use: `docker pull ghcr.io/elblanco2/whisper-transcriber:latest`
 
 ### Option 2: Docker Hub
 
 1. Push to Docker Hub
-2. Friends can use: `docker pull yourusername/whisper-transcriber`
+2. Friends can use: `docker pull elblanco2/whisper-transcriber`
 
 ### Option 3: Share docker-compose.yml
 
